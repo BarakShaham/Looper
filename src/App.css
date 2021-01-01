@@ -1,0 +1,207 @@
+body {
+    background-image: url("./assets/images/spot.jpg");
+    height: 100%;
+    background-size: cover;
+}
+
+.App {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.play-btn {
+    display: block;
+    background-color: #313131;
+    display: block;
+    margin: 0px auto;
+    padding: 50px;
+    border-radius: 16px;
+    box-shadow: inset -6px -6px 12px rgba(0, 0, 0, 0.8), inset 6px 6px 12px rgba(255, 255, 255, 0.4);
+    overflow: hidden;
+    margin: 10px 10px;
+    border-color: #888999;
+    border-width: 4px;
+    outline: 0;
+    max-width: 135px;
+    max-height: 135px;
+}
+
+@media (max-width: 768px) {
+    .play-btn {
+        padding: 40px;
+        margin: 10px;
+    }
+}
+
+@media (max-width: 556px) {
+    .play-btn {
+        padding: 30px;
+    }
+}
+
+button[class^='play-btn']:hover {
+    box-shadow: inset 6px 6px 12px rgba(255, 255, 255, 0.4), inset -6px -6px 12px rgba(0, 0, 0, 0.8);
+    transition-duration: 0.8s;
+    cursor: pointer;
+}
+
+button[class^='play-btn active'] {
+    background: #4aa14a;
+}
+
+.loopPadContainer .row {
+    flex-wrap: nowrap;
+}
+
+.loopPads .col {
+    flex-grow: 0;
+}
+
+.loopPads {
+    justify-content: center;
+}
+
+.padTitleContainer {
+    position: relative;
+    display: inline-block;
+}
+
+.padTitleContainer .padTitle {
+    color: #6e6e70;
+    padding: 5px 0;
+    position: absolute;
+    width: 120px;
+    bottom: 100%;
+    margin-left: -60px;
+}
+
+.recordContainer {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.recButtonsContainer {
+    margin-bottom: 10px;
+}
+
+.recAndPlayBtn {
+    display: flex;
+}
+
+.recording {
+    color: #DDDDDD;
+}
+
+text[class*='recording ready'] {
+    visibility: visible;
+}
+
+@media (max-width: 556px) {
+    .recAndPlayBtn {
+        display: block;
+    }
+}
+
+
+audio:hover, audio:active {
+    -webkit-box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.4);
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    transform: scale(1.05);
+}
+
+audio {
+    -webkit-transition: all 0.5s linear;
+    -moz-transition: all 0.5s linear;
+    -o-transition: all 0.5s linear;
+    transition: all 0.5s linear;
+    -moz-box-shadow: 2px 2px 4px 0px #006773;
+    -webkit-box-shadow: 2px 2px 4px 0px #006773;
+    box-shadow: 2px 2px 4px 0px #006773;
+    -moz-border-radius: 7px 7px 7px 7px;
+    -webkit-border-radius: 7px 7px 7px 7px;
+    border-radius: 40px;
+    outline: 0;
+}
+
+.playStopAllBtnContainer {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+
+:root {
+    --backgroundColor: rgba(246, 241, 209);
+    --colorShadeA: #2c302d;
+    --colorShadeB: #1a3038;
+    --colorShadeC: #006773;
+    --colorShadeD: #2c6d85;
+    --colorShadeE: #7e888c;
+}
+
+.playStopAllBtn, .recBtn {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: 14px;
+    color: var(--colorShadeA);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: inherit;
+    padding: 10px;
+    border: 2px solid var(--colorShadeA);
+    border-radius: 1em;
+    background: var(--colorShadeE);
+    transform-style: preserve-3d;
+    transition: all 175ms cubic-bezier(0, 0, 1, 1);
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.playStopAllBtn::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--colorShadeC);
+    border-radius: inherit;
+    box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.75em 0 0 var(--colorShadeA);
+    transform: translate3d(0, 0.75em, -1em);
+    transition: all 175ms cubic-bezier(0, 0, 1, 1);
+}
+
+
+.playStopAllBtn:hover, .recBtn:hover {
+    transform: translate(0, 0.375em);
+}
+
+.playStopAllBtn:hover::before {
+    transform: translate3d(0, 0.75em, -1em);
+}
+
+.playStopAllBtn:active {
+    transform: translate(0em, 0.75em);
+}
+
+.playStopAllBtn:active::before {
+    transform: translate3d(0, 0, -1em);
+    box-shadow: 0 0 0 2px var(--colorShadeB), 0 0.25em 0 0 var(--colorShadeB);
+
+}
+
+button[class^='recBtn rec true'], button[class^='recBtn rec']:hover {
+    transform: translate(0em, 0.75em);
+    background: #c71c0c
+}
