@@ -15,7 +15,7 @@ function LoopPlayer() {
     // states for all LoopPad children elements
     const [isPlaying, setIsPlaying] = useState([false, false, false, false, false, false, false, false, false]);
 
-    //
+    // changes the state of the pad which was clicked
     const reset = (id) => {
         let temp = [...isPlaying]
         temp[id] = !temp[id]
