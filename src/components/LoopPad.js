@@ -15,7 +15,7 @@ function LoopPad(props) {
     });
 
     // adds an active / notActive class name to the pad
-    const isActive = props.isPlaying ? (' active') : (' notActive')
+    const isActive = props.isPlaying ? (' active') : ('')
 
     return (
         <div className='padContainer'>
